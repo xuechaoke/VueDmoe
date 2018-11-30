@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="./assets/logo.png" alt="logo">
-        <HelloWorld/>
+        <HelloWorld></HelloWorld>
     </div>
 
 </template>
@@ -10,7 +10,7 @@
 //引入组件
 import HelloWorld from './components/HelloWord.vue'
 export default {
-    comments:{
+    components:{
       HelloWorld
     }
 }
