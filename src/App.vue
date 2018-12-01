@@ -1,49 +1,39 @@
 <template>
   <div>
-    <header class="site-header jumbotron">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h1>请发表对Vue的评论</h1>
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="page-header"><h2>Router Test</h2></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <div class="list-group">
+          <!--生成路由链接-->
+          <router-link to="/home" class="list-group-item">Home</router-link>
+          <router-link to="/about" class="list-group-item">About</router-link>
+
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+            <!--显示当前组件-->
+            <keep-alive>
+              <router-view msg="abc"></router-view>
+            </keep-alive>
           </div>
         </div>
       </div>
-    </header>
-    <div class="container">
-      <Add :addComment="addComment"/>
-      <List :comments="comments" :deleteComment="deleteComment"/>
     </div>
   </div>
+
 
 </template>
 
 <script>
-  //引入组件
-  import Add from './components/add'
-  import List from './components/list'
-
-  export default {
-    data (){
-      return{
-        comments: [
-          {name: 'ciao',content: "so easy"},
-          {name: "xue", content:"just so so"},
-          {name: "chaoke", content: "Vue's interesting"},
-        ]
-      }
-    },
-    methods:{
-      addComment(comment){
-        this.comments.unshift(comment);
-      },
-      deleteComment(index){
-          this.comments.splice(index,1)
-      }
-    },
-    components: {
-      Add, List
-    }
-  }
+  export default {}
 </script>
 
 <style>
